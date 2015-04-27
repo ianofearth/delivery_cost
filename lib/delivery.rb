@@ -18,7 +18,7 @@ class Delivery
       return flat_rate.to_s()
     else
       final_output = (flat_rate.+(@weight * 2))
-      return final_output.to_s()
+      return final_output.round(2).to_s()
     end
   end
 end
