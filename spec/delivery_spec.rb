@@ -16,4 +16,10 @@ describe(:Delivery) do
       expect(test_package.cost_to_ship()).to(eq("2.99"))
     end
   end
+  describe('#cost_to_ship') do
+    it('charges extra by weight if package is over given volume') do
+      test_package = Delivery.new("5", "5", "5", "5")
+      expect(test_package.cost_to_ship()).to(eq("12.99"))
+    end
+  end
 end
