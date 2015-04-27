@@ -10,4 +10,15 @@ class Delivery
     @volume = @length * @width * @height
     @volume.to_s()
   end
+
+  define_method(:cost_to_ship) do
+
+    final_output = 2.99
+    if @volume.to_i() <= 10
+      return final_output.to_s()
+    else
+      final_output = final_output + @weight * 2
+      return final_output.to_s()
+    end
+  end
 end
