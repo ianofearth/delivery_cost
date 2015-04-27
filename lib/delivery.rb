@@ -13,11 +13,11 @@ class Delivery
 
   define_method(:cost_to_ship) do
 
-    final_output = 2.99
-    if @volume.to_i() <= 10
-      return final_output.to_s()
+    flat_rate = 2.99
+    if self.volume.to_i() <= 10
+      return flat_rate.to_s()
     else
-      final_output = final_output + @weight * 2
+      final_output = (flat_rate.+(@weight * 2))
       return final_output.to_s()
     end
   end
